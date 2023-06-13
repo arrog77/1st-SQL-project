@@ -21,7 +21,10 @@ Answer:The cities and country having the highest level of transaction revenues a
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
 
 
-SQL Queries:
+SQL Queries:  SELECT al.fullvisitorid,al.city,al.country,AVG(p.orderedquantity)
+              FROM all_sessions al
+              JOIN products p USING(productsku)
+               GROUP BY al.fullvisitorid,al.city,al.country
 
 
 
@@ -34,7 +37,11 @@ Answer:
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
 
 
-SQL Queries:
+SQL Queries:SELECT al.city,al.country,al.v2productcategory,al.type,COUNT(*) as Count
+            FROM all_sessions al
+            JOIN products p USING(productsku)
+            GROUP BY al.city,al.country,al.v2productcategory,al.type
+            ORDER BY count DESC
 
 
 
