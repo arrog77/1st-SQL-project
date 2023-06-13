@@ -71,7 +71,11 @@ Answer:The top selling product is Android Wool Heather Cap Heather/Black from Un
 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
 
-SQL Queries:
+SQL Queries:  SELECT al.city,al.country,a.revenue
+             FROM all_sessions al
+            JOIN analytics a USING(fullvisitorid)
+            GROUP BY al.city,al.country,a.revenue
+             ORDER BY revenue ASC
 
 
 
