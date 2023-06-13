@@ -4,11 +4,16 @@ Answer the following questions and provide the SQL queries used to find the answ
 **Question 1: Which cities and countries have the highest level of transaction revenues on the site?**
 
 
-SQL Queries:
+SQL Queries:SELECT al.country,al.city,SUM(a.revenue)AS transaction_revenues
+            FROM all_sessions al
+            JOIN analytics a USING(fullvisitorid)
+            GROUP BY al.country,al.city
+            ORDER BY SUM(a.revenue) ASC
+            LIMIT 5
 
 
 
-Answer:
+Answer:The cities and country having the highest level of transaction revenues are United States South San Francisco with 82420000
 
 
 
@@ -42,11 +47,16 @@ Answer:
 **Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
 
 
-SQL Queries:
+SQL Queries:SELECT al.city,al.country,sr.name,SUM(a.revenue)
+            FROM all_sessions al
+           JOIN analytics a USING(fullvisitorid)
+           JOIN sales_report sr USING(productsku)
+           GROUP BY al.city,al.country,sr.name
+           ORDER BY SUM(a.revenue) ASC
 
 
 
-Answer:
+Answer:The top selling product is Android Wool Heather Cap Heather/Black from UnitedStates/Mountain View.
 
 
 
