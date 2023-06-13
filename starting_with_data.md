@@ -16,32 +16,40 @@ Answer: From all_sessions table I wanted to find how many duplicates were there 
 
 
 
-Question 2: 
+Question 2: find the total number of unique visitors (fullVisitorID)
 
 SQL Queries:SELECT COUNT(DISTINCT fullvisitorid)
-FROM all_sessions
+            FROM all_sessions
+
+Answer:The total number of unique visitors is 14223.
+
+
+
+Question 3: find the total number of unique visitors by referring sites 
+
+SQL Queries: SELECT COUNT(DISTINCT al.fullvisitorid) AS unique_visitors,a.visitnumber
+           FROM all_sessions al
+           JOIN analytics a USING(fullvisitorid)
+           GROUP BY a.visitnumber
 
 Answer:
 
 
 
-Question 3: 
+Question 4: find each unique product viewed by each visitor
 
-SQL Queries:
-
-Answer:
-
-
-
-Question 4: 
-
-SQL Queries:
+SQL Queries:SELECT COUNT(DISTINCT al.fullvisitorid) AS unique_visitors,a.visitnumber,p.name
+FROM all_sessions al
+JOIN analytics a USING(fullvisitorid)
+JOIN products p USING(productsku)
+GROUP BY a.visitnumber,p.name
+ORDER BY a.visitnumber DESC
 
 Answer:
 
 
 
-Question 5: 
+Question 5: compute the percentage of visitors to the site that actually makes a purchase
 
 SQL Queries:
 
