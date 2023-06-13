@@ -45,7 +45,7 @@ SQL Queries:SELECT al.city,al.country,al.v2productcategory,al.type,COUNT(*) as C
 
 
 
-Answer:
+Answer: In this we can see the pattern of which product categories in ordered most from Country and city.
 
 
 
