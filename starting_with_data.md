@@ -18,7 +18,8 @@ Answer: From all_sessions table I wanted to find how many duplicates were there 
 
 Question 2: 
 
-SQL Queries:
+SQL Queries:SELECT COUNT(DISTINCT fullvisitorid)
+FROM all_sessions
 
 Answer:
 
