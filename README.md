@@ -1,11 +1,15 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-
+The goal of t
 
 ## Process
-### (your step 1)
-### (your step 2)
+The process of the Transforming and Analyzing Data with SQL consists of following points
+1. Data Understanding: This includes the understanding of tables,columns,datatypes and relationships.
+2. Data Cleaning and Preparation: This step includes handling Null values, standardizing formats, correcting inconsistencies, removing duplicates and transforming data types.
+3. Data Transformation : This include calculations,aggregations,joins, subqueries and window function.
+4. Querying and Aggregating: This step includes writing SQL queries to extract the required data for analysis which involves selecting relevant columns,filtering rows based on conditions and aggregating data using functions such as COUNT,SUM,AVG.
+
 
 ## Results
 I tried to look at the patterns of products ordered in each month and want to know which month has the largest.
