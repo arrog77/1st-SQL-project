@@ -1,10 +1,3 @@
-Consider the data you have available to you. You can use the data to: - find all duplicate records - find the total number of unique visitors (fullVisitorID) - find the total number of unique visitors by referring sites - find each unique product viewed by each visitor - compute the percentage of visitors to the site that actually makes a purchase
-
-In the starting_with_data.md file, write 3 - 5 new questions that you could answer with this database. For each question, include The queries you used to answer the question The answer to the question
-
-
-
-
 Question 1: find all duplicate records
 
 SQL Queries:SELECT fullvisitorid,productsku,COUNT(*) AS count
@@ -54,3 +47,13 @@ Question 5: compute the percentage of visitors to the site that actually makes a
 SQL Queries:
 
 Answer:
+
+New Question : Which is the most number of produt that is sold?
+SQL Queries:  SELECT al.city,al.country,p.name,a.units_sold
+              FROM all_sessions al
+               JOIN analytics a USING(fullvisitorid)
+              JOIN products p USING(productsku)
+               GROUP BY 1,2,3,4
+              HAVING a.units_sold IS NOT NULL
+              ORDER BY 4 DESC
+Answer: The most units_sold is Collapsible Pet Bowl.
