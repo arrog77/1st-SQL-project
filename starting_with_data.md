@@ -25,7 +25,7 @@ SQL Queries: SELECT COUNT(DISTINCT al.fullvisitorid) AS unique_visitors,a.visitn
            JOIN analytics a USING(fullvisitorid)
            GROUP BY a.visitnumber
 
-Answer:
+Answer:The highest number of unique visitors by referring sites is 3273.
 
 
 
@@ -38,15 +38,17 @@ JOIN products p USING(productsku)
 GROUP BY a.visitnumber,p.name
 ORDER BY a.visitnumber DESC
 
-Answer:
+Answer:The unique product viewed by each visitor is outlined with the following query.
 
 
 
 Question 5: compute the percentage of visitors to the site that actually makes a purchase
 
-SQL Queries:
+SQL Queries:SELECT (COUNT(DISTINCT a.visitid)/COUNT(DISTINCT al.visitid)) * 100 AS visitors_percentage
+FROM analytics a
+LEFT  JOIN all_sessions al USING(visitid)
 
-Answer:
+Answer: The percentage of visitors to the site that actually makes a purchase was 40.
 
 New Question : Which is the most number of produt that is sold?
 SQL Queries:  SELECT al.city,al.country,p.name,a.units_sold
