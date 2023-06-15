@@ -14,5 +14,25 @@ Describe your QA process and include the SQL queries used to execute it.
        COUNT(CASE WHEN city IS NOT NULL THEN fullvisitorid 
 			ELSE NULL END)
 			OVER(ORDER BY date::DATE) as Total
+  FROM all_sessions
+  ORDER BY date ;
+
+2.SELECT fullvisitorid,country,COUNT(*) AS duplicate_count
+   FROM all_sessions
+   GROUP BY fullvisitorid,country
+   HAVING COUNT(*)>1;
+   
+3. SELECT column_name,data_type
+   FROM information_schema.columns
+   WHERE table_name ='all_sessions';
+   
+4.SELECT visitid,COUNT(*) AS duplicate_count
+  FROM all_sessions
+  GROUP BY visitid
+  HAVING COUNT(*)>1;
+  
+5.SELECT city,COUNT(*) AS null_count
 FROM all_sessions
-ORDER BY date 
+WHERE city = 'not available in demo dataset' OR city = '(not set)'
+GROUP BY city;
+
