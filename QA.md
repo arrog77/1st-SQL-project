@@ -10,4 +10,9 @@ Risk areas include issues such as data quality problems, security vulnerabilitie
 QA Process:
 Describe your QA process and include the SQL queries used to execute it.
 
-1.SELECT COUNT(*) 
+1.SELECT fullvisitorid,country,date::DATE,
+       COUNT(CASE WHEN city IS NOT NULL THEN fullvisitorid 
+			ELSE NULL END)
+			OVER(ORDER BY date::DATE) as Total
+FROM all_sessions
+ORDER BY date 
