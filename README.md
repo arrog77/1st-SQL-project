@@ -1,7 +1,7 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-The goal of t
+The goal of this project was to find the some pattern related to sales of products and understand the data for better decision making process.
 
 ## Process
 The process of the Transforming and Analyzing Data with SQL consists of following points
@@ -33,7 +33,10 @@ FROM all_sessions
 ORDER BY date
 
 ## Challenges 
-(discuss challenges you faced in the project)
+Missing values,inconsistencies or incorrect data.
+Cleaning and Validating data before was time-consuming and complex.
 
 ## Future Goals
-(what would you do if you had more time?)
+
+Using statistical analysis and visualization functions to communicate complex information in a visual and understandable formats that helps in reporting. 
+Identify patterns, trends and relationship in the data, making it easier to interpret and understand.
