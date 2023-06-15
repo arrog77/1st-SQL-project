@@ -33,7 +33,7 @@ SQL Queries:  SELECT al.fullvisitorid,
 
 
 
-Answer:
+Answer:The average number of products ordered from each city and country are outlined from the follwoing query.
 
 
 
@@ -93,7 +93,7 @@ SQL Queries:  SELECT al.city,
 
 
 
-Answer:
+Answer: The imapct of Revenue generated is mostly from United States.
 
 
 
